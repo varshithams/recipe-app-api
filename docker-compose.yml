@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app   #map app in project to app in docker-> changes made in proj reflected in docker , don hv to restart docker all d tym
+    command: >
+     sh -c "python manage.py runserver 0.0.0.0:8000"
